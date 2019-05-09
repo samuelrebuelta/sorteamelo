@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
-import { Equipo } from './models/equipos.model';
+import { Participante } from './models/participante.model';
 
 
 @Injectable()
 export class AppService {
 
-    private participantes: Array<Equipo> = [];
+    private participantes: Array<Participante> = [];
     private participantesSource = new Subject();
     participantes$ = this.participantesSource.asObservable();
 

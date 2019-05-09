@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Equipo } from '../../models/equipos.model';
-import { Subject, interval, Subscription } from 'rxjs';
-import { filter, tap } from 'rxjs/operators';
+import { Participante } from '../../models/participante.model';
+import { interval, Subscription } from 'rxjs';
+
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -14,14 +14,14 @@ export class SorteoComponent implements OnInit, OnDestroy {
   participantesSubscription = new Subscription();
   intervaloSubscription = new Subscription();
 
-  participantesSorteo: Array<Equipo> = [];
+  participantesSorteo: Array<Participante> = [];
   numeroParticipantes: number;
-  resultadoSorteo: Array<Equipo> = [];
+  resultadoSorteo: Array<Participante> = [];
 
   constructor(
     private appService: AppService
   ) {
-    this.appService.participantes$.subscribe((res: Array<Equipo>) => this.participantesSorteo = res);
+    this.appService.participantes$.subscribe((res: Array<Participante>) => this.participantesSorteo = res);
     this.appService.numeroParticipantes$.subscribe((res: number) => {
       this.numeroParticipantes = res;
       this.vaciar();

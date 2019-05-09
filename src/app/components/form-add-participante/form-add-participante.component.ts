@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AppService } from 'src/app/app.service';
-import { Equipo } from 'src/app/models/equipos.model';
+import { Participante } from 'src/app/models/participante.model';
 
 @Component({
-  selector: 'app-form-add-team',
-  templateUrl: './form-add-team.component.html',
-  styleUrls: ['./form-add-team.component.scss']
+  selector: 'app-form-add-participante',
+  templateUrl: './form-add-participante.component.html',
+  styleUrls: ['./form-add-participante.component.scss']
 })
-export class FormAddTeamComponent implements OnInit {
+export class FormAddParticipanteComponent implements OnInit {
 
   participanteFormGroup: FormGroup;
 
@@ -16,7 +16,7 @@ export class FormAddTeamComponent implements OnInit {
   numeroParticipantes: number;
 
   comboParticipantes = [4, 8, 16, 32];
-  participantes: Array<Equipo>;
+  participantes: Array<Participante>;
 
   showError = false;
   error: string;
@@ -25,7 +25,7 @@ export class FormAddTeamComponent implements OnInit {
     private fb: FormBuilder,
     private appService: AppService
   ) {
-    this.appService.participantes$.subscribe((res: Array<Equipo>) => this.participantes = res);
+    this.appService.participantes$.subscribe((res: Array<Participante>) => this.participantes = res);
     this.numeroParticipantes = this.appService.numeroParticipantesSource.getValue();
     this.appService.error$.subscribe(res => {
       this.showError = true;
