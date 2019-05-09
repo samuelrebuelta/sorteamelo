@@ -1,0 +1,14 @@
+<h5 class="title">PARTICIPANTES</h5>
+<p class="no-participantes" *ngIf="participantes.length <= 0; else divParticipantes">Todavía no hay participantes</p>
+<div class="row">
+
+  <ng-template #divParticipantes>
+    <ng-container *ngFor="let equipo of participantes; let i = index">
+      <div class="col-12 col-md-5 col-lg-5 card">
+        <div class="card-body my-auto">{{equipo?.nombre}}</div>
+      </div>
+      <div class="col-1" *ngIf="i % 2 === 0"></div>
+    </ng-container>
+  </ng-template>
+
+</div>

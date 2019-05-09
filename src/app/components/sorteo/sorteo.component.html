@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <button class="col-5 btn btn-primary"
+      [disabled]="participantesSorteo?.length !== numeroParticipantes || resultadoSorteo?.length === numeroParticipantes"
+      (click)="sortear();">
+      {{intervaloSubscription.closed ? 'SORTEAR' : 'PAUSE'}}</button>
+    <div class="col-2"></div>
+    <button class="col-5 btn btn-danger"
+      [disabled]="intervaloSubscription.closed && resultadoSorteo.length < participantesSorteo.length"
+      (click)="vaciar()">VACIAR</button>
+  </div>
+
+  <div class="row">
+    <ng-container *ngFor="let equipo of resultadoSorteo; let i = index">
+      <div class="col-5 card equipo-box h-100">
+        <div class="card-body my-auto">{{equipo?.nombre}}</div>
+      </div>
+      <div class="col-2 vs" *ngIf="i % 2 === 0">VS</div>
+    </ng-container>
+
+    <div class="col-5 equipo-box" *ngIf="!intervaloSubscription.closed">
+      <img class="spinner" src="../../assets/img/ball.gif">
+    </div>
+  </div>
+</div>

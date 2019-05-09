@@ -1,0 +1,25 @@
+:host {
+    form {
+        text-align: left;
+    }
+}
+
+.error-dialog {
+    font-size: 12px;
+    border: 1px solid #CA3028;
+    background-color: #E36D67;
+    color: #F4F0F0;
+    padding: 0;
+    p {
+        margin: 0;
+        padding-top: 8px;
+        font-size: 13px;
+    }
+}
+
+.close-error {
+    font-size: 20px;
+    text-align: right;
+    margin: auto;
+    cursor: pointer;
+}
