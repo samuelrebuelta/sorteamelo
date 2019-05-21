@@ -1,14 +1,18 @@
 <h5 class="title">PARTICIPANTES</h5>
-<p class="no-participantes" *ngIf="participantes.length <= 0; else divParticipantes">Todavía no hay participantes</p>
-<div class="row">
 
-  <ng-template #divParticipantes>
-    <ng-container *ngFor="let equipo of participantes; let i = index">
-      <div class="col-12 col-md-5 col-lg-5 card">
-        <div class="card-body my-auto">{{equipo?.nombre}}</div>
-      </div>
-      <div class="col-1" *ngIf="i % 2 === 0"></div>
-    </ng-container>
-  </ng-template>
+<form class="col-12 card no-padding" [formGroup]="participanteFormGroup" (keyup.enter)="addEquipo()">
+  <input class="card-body" type="text" placeholder="Introduce participante" maxlength="12" formControlName="nombre"
+    (blur)="addEquipo()">
+</form>
 
+<p class="no-participantes" *ngIf="participantes.length <= 0">Todavía no hay participantes</p>
+
+<div class="container row custom-card" *ngIf="participantes.length > 0">
+  <ng-container *ngFor="let equipo of participantes; let i = index">
+    <div class="col-5 card row">
+      <div class="col-10">{{equipo?.nombre}}</div>
+      <div class="col-2 eliminar" (click)="eliminarParticipante(equipo.nombre)">X</div>
+    </div>
+    <div class="col-2" *ngIf="i % 2 === 0"></div>
+  </ng-container>
 </div>

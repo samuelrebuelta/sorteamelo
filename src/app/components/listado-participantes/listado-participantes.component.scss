@@ -1,9 +1,21 @@
-.card {
-    // width: 100%;
-    margin-top: 15px; 
-    margin-bottom: 15px; 
+.custom-card {
+    margin: 0;
 }
 
+.card {
+    margin-top: 15px; 
+    margin-bottom: 15px;
+    padding-top: 20px;
+    font-size: 12px;
+    input {
+        border: none;
+    }
+
+    .eliminar {
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
 
 .no-participantes {
     text-align: left;

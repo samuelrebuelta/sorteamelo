@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormAddParticipanteComponent } from './form-add-participante.component';
+import { FormAddParticipanteComponent } from './ajustes-torneo.component';
 
 describe('FormAddParticipanteComponent', () => {
   let component: FormAddParticipanteComponent;

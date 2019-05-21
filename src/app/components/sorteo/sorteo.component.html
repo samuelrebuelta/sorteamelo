@@ -13,7 +13,7 @@
   <div class="row">
     <ng-container *ngFor="let equipo of resultadoSorteo; let i = index">
       <div class="col-5 card equipo-box h-100">
-        <div class="card-body my-auto">{{equipo?.nombre}}</div>
+        <div>{{equipo?.nombre}}</div>
       </div>
       <div class="col-2 vs" *ngIf="i % 2 === 0">VS</div>
     </ng-container>

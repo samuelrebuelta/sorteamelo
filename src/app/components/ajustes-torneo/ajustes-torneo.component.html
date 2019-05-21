@@ -1,0 +1,16 @@
+<h5 class="title">AJUSTES TORNEO</h5>
+<div class="row">
+  <form class="col-12" [formGroup]="numeroParticipantsFormGroup">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Numero de participantes</label>
+      <select #selector formControlName="numeroParticipantes" class="form-control" id="exampleFormControlSelect1"
+        (change)="modificarNumeroParticipantes(selector.value)">
+        <option *ngFor="let number of comboParticipantes" value="{{number}}">{{number}}</option>
+      </select>
+    </div>
+  </form>
+</div>
+<div class="col-12 row error-dialog" *ngIf="showError">
+  <p class="col-10">{{error}}</p>
+  <div class="col-2 close-error" (click)="showError = false">X</div>
+</div>
