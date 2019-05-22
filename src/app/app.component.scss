@@ -1,5 +1,12 @@
+.container-custom {
+    height: 85%;
+    overflow-y: auto;
+    margin-top: 30px; 
+    margin-bottom: 25px;
+    text-align: center;
+}
+
 .main-title {
     margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', 'roboto', 'sans-serif';
 }

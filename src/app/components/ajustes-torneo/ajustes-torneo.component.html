@@ -5,7 +5,9 @@
       <label for="exampleFormControlSelect1">Numero de participantes</label>
       <select #selector formControlName="numeroParticipantes" class="form-control" id="exampleFormControlSelect1"
         (change)="modificarNumeroParticipantes(selector.value)">
-        <option *ngFor="let number of comboParticipantes" value="{{number}}">{{number}}</option>
+        <option *ngFor="let number of comboParticipantes" value="{{number}}">
+          {{number === 1 ? number + ' - Se elige un participante al azar' : number}}
+        </option>
       </select>
     </div>
   </form>

@@ -34,6 +34,13 @@ export class SorteoComponent implements OnInit, OnDestroy {
   }
 
   sortear() {
+
+    if (this.numeroParticipantes === 1) {
+      const equipoRandom = this.participantesSorteo[Math.floor(Math.random() * this.participantesSorteo.length)];
+      this.resultadoSorteo.push(equipoRandom);
+      if (this.resultadoSorteo.length === 1) { this.intervaloSubscription.unsubscribe(); }
+      return false;
+    }
     if (this.intervaloSubscription.closed && this.resultadoSorteo.length < this.participantesSorteo.length) {
       const intervalo = interval(500);
       this.intervaloSubscription = intervalo.subscribe(() => {

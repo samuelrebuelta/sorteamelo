@@ -12,7 +12,7 @@ export class AjustesTorneoComponent implements OnInit {
   numeroParticipantsFormGroup: FormGroup;
   numeroParticipantes: number;
 
-  comboParticipantes = [4, 8, 16, 32];
+  comboParticipantes = [1, 4, 8, 16, 32];
 
   showError = false;
   error: string;
@@ -41,7 +41,6 @@ export class AjustesTorneoComponent implements OnInit {
   modificarNumeroParticipantes(value: string) {
     this.numeroParticipantes = parseFloat(value);
     this.appService.modificarNumeroParticipantes(parseFloat(value));
-    // this.appService.addParticipante(null);
   }
 
 }

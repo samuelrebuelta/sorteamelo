@@ -1,0 +1,15 @@
+<div class="row buttons">
+
+  <button class="col-5 btn btn-dark" [class.col-12]="step === 3" (click)="prevStep()" *ngIf="step === 2 || step === 3">
+    <span style="margin-left: 25px">{{step === 2 ? 'AJUSTES' : 'PARTICIPANTES'}}</span>
+    <i class="material-icons" style="padding-top: 5px;">arrow_back</i>
+  </button>
+  <div class="col-2" *ngIf="step === 2"></div>
+
+  <button class="col-5 btn btn-light" [class.col-12]="step === 1" (click)="nextStep()" *ngIf="step === 1 || step === 2"
+    [disabled]="botonDisabled()">
+    <i class="material-icons" style="padding-top: 5px;">arrow_forward</i>
+    <span>{{step === 1 ? 'PARTICIPANTES' : 'SORTEO'}}</span>
+  </button>
+
+</div>

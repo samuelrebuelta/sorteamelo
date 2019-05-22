@@ -19,12 +19,14 @@ export class AppService {
     constructor() { }
 
     addParticipante(elem) {
-        if (this.participantes.find(participante => participante.nombre === elem.nombre)) {
-            this.errorSource.next('¡Ya hay un participante con ese nombre!');
-        } else {
-            this.participantes.push(elem);
+        if (elem && elem.nombre) {
+            if (this.participantes.find(participante => participante.nombre === elem.nombre)) {
+                this.errorSource.next('¡Ya hay un participante con ese nombre!');
+            } else {
+                this.participantes.push(elem);
+            }
+            this.participantesSource.next(this.participantes);
         }
-        this.participantesSource.next(this.participantes);
     }
 
     modificarNumeroParticipantes(val: number) {

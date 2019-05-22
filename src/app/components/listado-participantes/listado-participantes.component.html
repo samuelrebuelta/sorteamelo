@@ -1,11 +1,19 @@
-<h5 class="title">PARTICIPANTES</h5>
+<h5 class="title">
+    PARTICIPANTES
+    <span class="pendientes" *ngIf="numeroParticipantes !== 1 && (numeroParticipantes - participantes?.length !== 0)">
+      Faltan por introducir: {{numeroParticipantes - participantes?.length}}
+    </span>
+    <span class="pendientes" *ngIf="numeroParticipantes === 1">
+      Puedes introducir: {{32 - participantes?.length}}
+    </span>
+</h5>
 
-<form class="col-12 card no-padding" [formGroup]="participanteFormGroup" (keyup.enter)="addEquipo()">
+<form class="col-12 card no-padding" *ngIf="participantes?.length !== numeroParticipantes || numeroParticipantes === 1" [formGroup]="participanteFormGroup" (keyup.enter)="addEquipo()">
   <input class="card-body" type="text" placeholder="Introduce participante" maxlength="12" formControlName="nombre"
     (blur)="addEquipo()">
 </form>
 
-<p class="no-participantes" *ngIf="participantes.length <= 0">Todavía no hay participantes</p>
+<p class="no-participantes" *ngIf="participantes?.length <= 0">Todavía no hay participantes</p>
 
 <div class="container row custom-card" *ngIf="participantes.length > 0">
   <ng-container *ngFor="let equipo of participantes; let i = index">

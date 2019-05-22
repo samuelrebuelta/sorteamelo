@@ -8,6 +8,7 @@ import { SorteoComponent } from './components/sorteo/sorteo.component';
 import { AppService } from './app.service';
 import { ListadoParticipantesComponent } from './components/listado-participantes/listado-participantes.component';
 import { AjustesTorneoComponent } from './components/ajustes-torneo/ajustes-torneo.component';
+import { NavegacionFooterComponent } from './components/navegacion-footer/navegacion-footer.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AjustesTorneoComponent } from './components/ajustes-torneo/ajustes-torn
     SorteoComponent,
     AjustesTorneoComponent,
     ListadoParticipantesComponent,
+    NavegacionFooterComponent
   ],
   imports: [
     BrowserModule,

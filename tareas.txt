@@ -1,0 +1,9 @@
+deshabilitar boton vaciar cuando no hay nada
+
+quitar input cuando ya no se pueda añadir mas participantes y mostrar mensaje de notificacion
+
+fuente de titulo roboto segunda opcion
+
+opcion de 1 solo participante con posibilidad de eliminativo
+
+wizard
