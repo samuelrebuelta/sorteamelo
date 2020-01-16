@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4. 
 
+## Descripción
+
+Aplicación web desarrollada en Angular que te permite generar sorteos aleatorios. Sigues los pasos que te indica, añades los usuarios y realiza el tipo de sorteo deseado.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
